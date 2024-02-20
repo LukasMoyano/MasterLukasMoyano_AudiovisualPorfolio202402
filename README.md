@@ -1,2 +1,1 @@
-# MasterLukasMoyano_AudiovisualPorfolio
 # MasterLukasMoyano_AudiovisualPorfolio202402
