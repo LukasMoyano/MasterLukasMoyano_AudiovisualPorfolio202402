@@ -19,6 +19,7 @@
     <link href="assets/css/main.css" rel="stylesheet">
     <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
     <title>Visual Arts Master & Digital _-LukasMoyano-_</title>
 </head>
@@ -35,10 +36,8 @@
     </header>
     <!-- header -->
     <!-- banner -->
-    <section class="ds-banner bg-gray-800 text-white py-20 relative overflow-hidden">
-        <!-- Agregamos el canvas para la animación del fondo -->
-        <canvas id="canv" class="absolute inset-0 z-0" style="pointer-events: none;"></canvas>
-        <div class="container mx-auto relative z-10">
+    <section class="ds-banner bg-red text-white py-20">
+        <div class="container mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                 <div class="md:col-span-1">
                     <h1 class="ds-banner-hed text-4xl md:text-5xl lg:text-6xl leading-tight">Master of Visual Arts, Specialising in Audiovisual Expression and Multimedia Production 🚀 from Bogotá D.C., Colombia.</h1>
@@ -148,36 +147,6 @@
                 toggleSoundButton.textContent = 'Sound Off';
             }
         }
-    </script>
-    <script>
-        const canvas = document.getElementById('canv');
-        const ctx = canvas.getContext('2d');
-
-        const w = canvas.width = document.querySelector('.ds-banner').offsetWidth;
-        const h = canvas.height = document.querySelector('.ds-banner').offsetHeight;
-        const cols = Math.floor(w / 20) + 1;
-        const ypos = Array(cols).fill(0);
-
-        ctx.fillStyle = '#000';
-        ctx.fillRect(0, 0, w, h);
-
-        function matrix() {
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.04)';
-            ctx.fillRect(0, 0, w, h);
-
-            ctx.fillStyle = '#0f0';
-            ctx.font = '15pt monospace';
-
-            ypos.forEach((y, ind) => {
-                const text = String.fromCharCode(Math.random() * 128);
-                const x = ind * 20;
-                ctx.fillText(text, x, y);
-                if (y > 100 + Math.random() * 10000) ypos[ind] = 0;
-                else ypos[ind] = y + 20;
-            });
-        }
-
-        setInterval(matrix, 50);
     </script>
 </body>
 
