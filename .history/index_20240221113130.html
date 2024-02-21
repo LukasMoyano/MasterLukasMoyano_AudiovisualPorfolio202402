@@ -34,14 +34,14 @@
         </div>
     </header>
     <!-- header -->
-    <!-- banner -->
-    <section class=" flex relative overflow-hidden">
+       <!-- banner -->
+       <section class="ds-banner relative overflow-hidden">
         <!-- Agregamos el canvas para la animación del fondo -->
-        <canvas id="canv" class="absolute inset-0 z-0 w-full h-full" style="pointer-events: none;"></canvas>
+        <canvas id="canv" class="absolute left-0 right-0 z-0" style="pointer-events: none;"></canvas>
         <div class="container mx-auto py-20 relative z-10">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                 <div class="md:col-span-1">
-                    <h1 class="ds-banner-hed text-white text-4xl md:text-5xl lg:text-6xl leading-tight" style="font-family: 'Share Tech', sans-serif;">Master of Visual Arts, Specialising in Audiovisual Expression and Multimedia Production 🚀 from Bogotá D.C., Colombia.</h1>
+                    <h1 class="text-white fds-banner-hed text-4xl md:text-5xl lg:text-6xl leading-tight">Master of Visual Arts, Specialising in Audiovisual Expression and Multimedia Production 🚀 from Bogotá D.C., Colombia.</h1>
                     <ul class="ds-social flex gap-4 mt-8">
                         <li><a href="#" target="_blank"><i class="ri-github-fill"></i></a></li>
                         <li><a href="#" target="_blank"><i class="ri-stack-overflow-line"></i></a></li>
@@ -49,7 +49,7 @@
                     </ul>
                 </div>
                 <div class="md:col-span-1">
-                    <figure>
+                    <figure class="text-white">
                         <video id="videoPlayer" src="/assets/images/LukasMoyano_VisualArtist&WebDeveloper.mp4" class="ds-image-shadow" controls autoplay loop muted></video>
                         <figcaption class="text-center">Lukas Moyano</figcaption>
                     </figure>
@@ -153,8 +153,8 @@
         const canvas = document.getElementById('canv');
         const ctx = canvas.getContext('2d');
 
-        const w = canvas.width = window.innerWidth;
-        const h = canvas.height = window.innerHeight;
+        const w = canvas.width = document.querySelector('.ds-banner').offsetWidth;
+        const h = canvas.height = document.querySelector('.ds-banner').offsetHeight;
         const cols = Math.floor(w / 20) + 1;
         const ypos = Array(cols).fill(0);
 
@@ -162,7 +162,7 @@
         ctx.fillRect(0, 0, w, h);
 
         function matrix() {
-            ctx.fillStyle = '#0001';
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.04)';
             ctx.fillRect(0, 0, w, h);
 
             ctx.fillStyle = '#0f0';
